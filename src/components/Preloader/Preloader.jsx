@@ -66,7 +66,7 @@ const Preloader = () => {
                 ,"0")
             })
             tl.to(".preloader-header", {
-                y: "-45vh",
+                y: "-40vh",
                 duration: .6,
                 ease:"power3.out"
             },"-=.8").to(".preloader-header path", {
