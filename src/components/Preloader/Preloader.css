@@ -1,0 +1,52 @@
+.preloader{
+    position: fixed;
+    z-index:999;
+    top: 0;
+    width: 100%;
+    height:100svh;
+    overflow: hidden;
+}
+
+.preloader-images{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    z-index:-1;
+}
+.preloader-images .img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    filter: blur(20.6px);
+    transform: scale(1.1);
+}
+
+.preloader-images .img:nth-child(1) { z-index: 5; }
+.preloader-images .img:nth-child(2) { z-index: 4; }
+.preloader-images .img:nth-child(3) { z-index: 3; }
+.preloader-images .img:nth-child(4) { z-index: 2; }
+.preloader-images .img:nth-child(5) { z-index: 1; }
+
+.preloader-images .img img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+}
+
+.preloader-header{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50% , -50%);
+    will-change: transform;
+}
+.preloader-header path{
+    opacity: 0;
+    will-change: opacity , filter;
+    filter: blur(5px);
+}
