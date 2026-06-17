@@ -1,8 +1,7 @@
 "use client";
 
 import gsap from "gsap";
-import React, { useEffect, useState } from "react";
-import { SplitText } from "gsap/SplitText";
+import React, { useEffect} from "react";
 import "./Preloader.css";
 
 const Preloader = () => {
