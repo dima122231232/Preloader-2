@@ -15,6 +15,11 @@ const Preloader = () => {
                 "/preloader/3.jpg",
                 "/preloader/4.jpg",
                 "/preloader/5.jpg",
+                "/preloader/6.jpg",
+                "/preloader/7.jpg",
+                "/preloader/8.jpg",
+                "/preloader/9.jpg",
+
             ];
 
             await Promise.all(
@@ -44,35 +49,28 @@ const Preloader = () => {
             const preloaderImages = gsap.utils.toArray(".preloader-images .img");
             const tl = gsap.timeline({delay:.25});
             tl.to(pathsGroup, {
-                opacity: .4,
-                filter:"blur(0px)",
-                stagger: 0.25,
-                duration: 1,
-            })
-            .to(pathsGroup, {
                 opacity: 1,
-                duration: 1,
-                stagger: 0.1,
-            },"-=.8")
-            preloaderImages.forEach((preloaderImg, index) => {
-                tl.to(
-                    preloaderImg,
-                    {
-                    opacity:0,
-                    duration: .8,
-                    delay:.6 + index * 1.2,
-                    }
-                ,"0")
+                stagger: 0.24,
+                duration: .01,
+                ease:"none"
             })
-            tl.to(".preloader-header", {
-                y: "-40vh",
-                duration: .6,
-                ease:"power3.out"
-            },"-=.8").to(".preloader-header path", {
+            preloaderImages.forEach((preloaderImg, index) => { tl.to( preloaderImg, { opacity:0, duration:.2, delay:index * .25, } ,"0") })
+            // tl.to(".preloader-header", {
+            //     y: "-40vh",
+            //     duration: .6,
+            //     ease:"power3.out"
+            // },"-=.8")
+            tl.to(".preloader-header path", {
                 fill: "#000",
-                duration: .6,
+                duration: .2,
                 ease:"none"
             },"<")
+            // .to(".preloader-header", {
+            //     y: "-40vh",
+            //     duration: 1,
+            //     delay:0,
+            //     ease:"power3.out"
+            // })
 
 
         }
@@ -87,7 +85,12 @@ const Preloader = () => {
                 <div className="img"><img src="/preloader/2.jpg" alt="" /></div>
                 <div className="img"><img src="/preloader/3.jpg" alt="" /></div>
                 <div className="img"><img src="/preloader/4.jpg" alt="" /></div>
-                {/* <div className="img"><img src="/preloader/5.jpg" alt="" /></div> */}
+                <div className="img"><img src="/preloader/5.jpg" alt="" /></div> 
+                <div className="img"><img src="/preloader/6.jpg" alt="" /></div>
+                <div className="img"><img src="/preloader/7.jpg" alt="" /></div>
+                <div className="img"><img src="/preloader/8.jpg" alt="" /></div>
+                <div className="img"><img src="/preloader/9.jpg" alt="" /></div> 
+
             </div>
 
             <div className="preloader-header">
@@ -103,6 +106,11 @@ const Preloader = () => {
                     <path d="M0 0.394043H3.25704V20.141H0V0.394043Z" fill="white" fillOpacity="0.9"/>
                 </svg>
             </div>
+
+            <p>
+                The end of the preloader animation will depend on the{" "}
+                <span style={{ color: "red" }}>hero section.</span>
+            </p>
         </div>
     );
 };
